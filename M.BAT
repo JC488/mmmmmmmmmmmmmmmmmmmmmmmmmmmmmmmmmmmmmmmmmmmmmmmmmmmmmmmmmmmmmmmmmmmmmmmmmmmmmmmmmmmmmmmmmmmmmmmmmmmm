@@ -1,3 +1,4 @@
 @echo off
+rem --  CompanionCube
 echo M
-@echo on
+pause
