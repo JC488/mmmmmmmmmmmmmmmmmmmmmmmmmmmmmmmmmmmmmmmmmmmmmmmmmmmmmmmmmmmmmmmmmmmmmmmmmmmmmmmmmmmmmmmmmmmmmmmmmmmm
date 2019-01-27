@@ -1,6 +1,9 @@
 --[[
 
-Control22/kubapolish (helped fix ONE VERY BIG SPELLING ERROR)/Borsy (told me that the ending bracket doesn't need to have --) (and uploaded sound) (and fixed ass shit coding style with inconsistent indentation and everything inconsistent)
+Control22
+kubapolish (helped fix ONE VERY BIG SPELLING ERROR)
+Borsy (told me that the ending bracket doesn't need to have --) (and uploaded sound) (and fixed ass shit coding style with inconsistent indentation and everything inconsistent)
+
 M.lua
 
 RUN AS LOCALSCRIPT
@@ -19,6 +22,8 @@ local rgb = Color3.fromRGB
 function init(m)
     m = m or "rbxassetid://2790243015"
 	local g_ve = Instance.new("ScreenGui")
+	g_ve.IgnoreGuiInset=true
+	
 	local g_sn = Instance.new("Sound",g_ve)
 		  g_sn.SoundId=m
 		
@@ -46,7 +51,7 @@ function init(m)
 			Font = Enum.Font.Fantasy,
 		}
 }
-
+	
     for i,v in pairs(g_obj.FrameParams) do
         g_obj.Frame[i] = v
     end
