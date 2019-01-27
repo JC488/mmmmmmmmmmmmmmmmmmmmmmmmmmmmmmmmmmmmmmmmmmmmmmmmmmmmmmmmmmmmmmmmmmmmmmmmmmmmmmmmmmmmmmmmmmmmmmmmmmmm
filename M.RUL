@@ -1,0 +1,71 @@
+--[[
+
+Control22/kubapolish (helped fix ONE VERY BIG SPELLING ERROR)/Borsy (told me that the ending bracket doesn't need to have --) (and uploaded sound) (and fixed ass shit coding style with inconsistent indentation and everything inconsistent)
+M.lua
+
+RUN AS LOCALSCRIPT
+]]
+wait()
+local pl = game.Players.LocalPlayer
+if not pl then
+    error("Please run this as a localscript")
+end
+
+local c = pl.Character
+local h = c.Humanoid
+
+local rgb = Color3.fromRGB
+
+function init(m)
+    m = m or "rbxassetid://2790243015"
+	local g_ve = Instance.new("ScreenGui")
+	local g_sn = Instance.new("Sound",g_ve)
+		  g_sn.SoundId=m
+		
+    local g_obj = {
+        Frame = Instance.new("Frame"),
+        Label = Instance.new("TextLabel"),
+        FrameParams = {
+            Name = "m",
+            BackgroundTransparency = 0,
+            BorderSizePixel = 0,
+            Size = UDim2.new(1, 0, 1, 0),
+            BackgroundColor3 = rgb(0, 0, 0),
+            Parent = g_ve
+        },
+		LabelParams = {
+			Name = "m",
+			BackgroundTransparency = 1,
+			BorderSizePixel = 0,
+			Size = UDim2.new(1, 0, 1, 0),
+            BackgroundColor3 = rgb(0, 0, 0),
+			TextColor3 = rgb(255,255,255),
+            Parent = g_ve,
+			Text = "m",
+			TextScaled = true,
+			Font = Enum.Font.Fantasy,
+		}
+}
+
+    for i,v in pairs(g_obj.FrameParams) do
+        g_obj.Frame[i] = v
+    end
+    for i,v in pairs(g_obj.LabelParams) do
+        g_obj.Label[i] = v
+    end
+    g_ve.Parent = pl.PlayerGui
+	g_obj.Label.Parent=g_obj.Frame
+
+	for i = 1,0,-0.01 do
+		g_obj.Label.TextTransparency=i
+		wait()
+	end
+	
+	wait(1)
+	g_sn:Play()
+
+	wait(5)
+	g_obj.Frame:Destroy()
+	script:Destroy()
+end
+init()
